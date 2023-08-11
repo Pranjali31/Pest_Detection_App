@@ -41,10 +41,9 @@ class user_login(APIView):
         email = serializer.validated_data.get('email')
         password = serializer.validated_data.get('password')
         
-         # Authenticate the user using Django's built-in authentication mechanism
+         # Authenticate the user using Django's built-in authentication 
         user = authenticate(email=email, password=password)
         
-        # If user is not found or the password is incorrect, raise AuthenticationFailed
         if not user or not user.is_active:
             raise AuthenticationFailed("No active account found with the given credentials")
         
@@ -64,10 +63,10 @@ loaded_model = tf.keras.models.load_model('./pestDetectionApp/models/model_rec1.
 
 def process_image(image_data):
     
-    # Perform image processing     
+    # image processing     
     image = tf.io.decode_image(image_data, channels=3)
     
-    # Resize the image to the required input size of your model
+    # Resize the image to the required input size of the model
     processed_image = tf.image.resize(image, (400, 506))
     return processed_image
 
@@ -75,15 +74,15 @@ def process_image(image_data):
 def predict_image(request):
     if request.method == 'POST':
         
-        # Get the image file from the request
+        # Getting image file from the request
         image_file = request.FILES.get('image')
         image_data =image_file.read()
         processed_image = process_image(image_data)
         
-         # Add a batch dimension to the processed image
+         # Adding batch dimension to the processed image
         processed_image = tf.expand_dims(processed_image, axis=0)
         
-        # Make predictions using the ML model
+        # Makeing predictions
         predictions = loaded_model.predict(processed_image)
         
         pred = np.transpose(predictions)
