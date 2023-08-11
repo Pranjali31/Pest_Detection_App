@@ -27,12 +27,10 @@ class LoginSerializer(serializers.Serializer):
         email = data.get('email')
         password = data.get('password')
         
-        # Check if email and password are provided
         if email and password:
-            # Authenticate the user using Django's built-in authentication mechanism
+            # Authenticate the user using Django's built-in authentication
             user = authenticate(email=email, password=password)
             
-             # If user is not found or the password is incorrect, raise AuthenticationFailed
             if not user or not user.is_active:
                 raise AuthenticationFailed("No active account found with the given credentials")
             
