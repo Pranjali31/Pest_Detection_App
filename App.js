@@ -1,44 +1,4 @@
-/*
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { useState, useEffect} from 'react';
-import axios from "axios";
-import image from './assets/Signin.png'; // Update the import path if needed
-import image1 from './assets/Rectangle 6.png';
 
-export default function App() {
-  const [users, setUsers] = useState([])
-  useEffect(() =>{
-    async function getAllUsers(){
-      try {
-        const users = await axios.get('http://127.0.0.1:8000/Pest_Detection/User/')
-        console.log(users.data)
-        setUsers(users.data)
-      }
-      catch (error){
-
-      }
-    }
-    getAllUser()
-  },[] )
-  return (
-    <View style={{ width: '100%', height: '100%', position: 'relative', backgroundColor: 'rgba(255, 255, 255, 0.20)' }}>
-      <Image style={{ width: 393, height: 855, left: 0, top: 0, bottom:0, position: 'absolute' }} source={image} />
-      <Text style={{ color: 'black', fontSize: 35,top:100,fontWeight: '800', textAlign: 'center', lineHeight: 15 }}>{`\n\n\nPEST DETECTION\n\n\n`}</Text>
-      <Image style={{ width: 244, height: 369, position: 'relative', left:75, top:200 }} source={image1} />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 0.6,
-    backgroundColor: '#fcf',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-*/
 
 import { StatusBar } from 'expo-status-bar';
 import { View, Image, StyleSheet } from 'react-native';
