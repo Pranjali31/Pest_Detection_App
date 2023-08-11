@@ -7,7 +7,7 @@ const HomePage = () => {
   const navigation = useNavigation();
   
   const handleLoadCaptureImages = () => {
-    navigation.navigate('Capture'); // Navigate to the Capture screen
+    navigation.navigate('Capture');
   };
 
   const handleLoadPreviousResults = async() => {
@@ -16,13 +16,6 @@ const HomePage = () => {
      
   };
 
-  /*const handleLoginPress = () => {
-    navigation.navigate('Login'); // Navigate to the Login screen
-  };
-
-  const handleRegisterPress = () => {
-    navigation.navigate('Register'); // Navigate to the Register screen
-  };*/
 
   return (
     <View style={styles.container}>
@@ -71,9 +64,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   bottomButtonsContainer: {
-    flexDirection: 'row', // Align buttons side by side
-    justifyContent: 'space-evenly', // Evenly distribute buttons
-    position: 'relative', // Position at the bottom of the screen
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    position: 'relative', 
     top: 20,
     left: 0,
     right: 0,
